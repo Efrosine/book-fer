@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->foreignId('writer_id')->constrained('writers')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('title');
             $table->string('image_url')->nullable();
-            $table->enum('genre', ['horror', 'comedy', 'drama', 'action', 'others'])->default('others');
+            $table->enum('genre', ['Horror', 'Comedy', 'Drama', 'Action', 'Romance', 'Others'])->default('Others');
             $table->text('description');
             $table->integer('price');
             $table->timestamps();

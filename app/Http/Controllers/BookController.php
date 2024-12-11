@@ -14,7 +14,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+        $books = Book::with('writer')->get();
         return response()->json($books);
     }
 
@@ -27,8 +27,9 @@ class BookController extends Controller
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $image->store('bookImg', 'public');
-            $validated['image_url'] = $image->hashName();
+            $validated['image_url'] = $image->store('bookImg', 'public');
+            // $image->store('bookImg', 'public');
+            // $validated['image_url'] = $image->hashName();
             unset($validated['image']);
 
         }

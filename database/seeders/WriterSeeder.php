@@ -16,7 +16,7 @@ class WriterSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             Writer::create([
                 'name' => $faker->name,
                 'image_url' => 'writerImg/zpr2FCl2mI5ZY76lcUiEcjxEVBkGtn1l1uBAwgNY.jpg',

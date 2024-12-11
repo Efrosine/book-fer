@@ -15,12 +15,12 @@ class BookSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             Book::create([
-                'writer_id' => $faker->numberBetween(1, 10),
+                'writer_id' => $faker->numberBetween(1, 5),
                 'title' => $faker->sentence(3), // Judul buku dengan 3 kata
                 'image_url' => 'bookImg/quTskO8XfvBT3aQtkt2aGlCCsGuN4cvYpfZyNO18.jpg',
-                'genre' => $faker->randomElement(['horror', 'comedy', 'drama', 'action', 'others']),
+                'genre' => $faker->randomElement(['Horror', 'Comedy', 'Drama', 'Action', 'Romance', 'Others']),
                 'description' => $faker->paragraph(), // Deskripsi buku
                 'price' => $faker->numberBetween(50000, 200000), // Harga antara 50.000 - 200.000
             ]);
